@@ -45,8 +45,8 @@ public class Sketch : MonoBehaviour {
 			float z = 0.0f;
 
 			GameObject newCube = (GameObject)Instantiate (myPrefab, new Vector3 (x, y, z), Quaternion.identity);
-			newCube.GetComponent<CubeCode> ().SetSize ((1.0f - perc) * 2);
-			newCube.GetComponent<CubeCode> ().RotateSpeed = perc;
+			newCube.GetComponent<CubeScript> ().SetSize ((1.0f - perc) * 2);
+			newCube.GetComponent<CubeScript> ().rotateSpeed = perc;
 			newCube.GetComponentInChildren<TextMesh> ().text = product.ProductName;
                 
 
