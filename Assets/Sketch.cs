@@ -3,7 +3,7 @@ using Pathfinding.Serialization.JsonFx; //make sure you include this using
 
 public class Sketch : MonoBehaviour {
 	public GameObject myPrefab;
-	public string _WebsiteURL = "http://mbah143.azurewebsites.net/tables/product?zumo-api-version=2.0.0";
+	public string _WebsiteURL = "http://mbah143.azurewebsites.net/tables/product?zumo-api-version=2.0.0"; /* mbah143 */
 
 	void Start () {
 		//Reguest.GET can be called passing in your ODATA url as a string in the form:
@@ -22,11 +22,11 @@ public class Sketch : MonoBehaviour {
 
 		//----------------------
 		//YOU WILL NEED TO DECLARE SOME VARIABLES HERE SIMILAR TO THE CREATIVE CODING TUTORIAL
-
+		/* mbah143 */
 		int totalCubes = products.Length;
 		int totalDistance = 10;
 		int i = 0;
-
+		/* mbah143 */
 
 
 		//----------------------
@@ -38,10 +38,12 @@ public class Sketch : MonoBehaviour {
 			// Debug.Log("This products name is: " + product.ProductName);
 			//----------------------
 			//YOUR CODE TO INSTANTIATE NEW PREFABS GOES HERE
+
+			/* mbah143 */
 			float perc = i / (float)totalCubes;
 			i++;
 			float x = perc * totalDistance;
-			float y = 5.0f;
+			float y = 2.0f;
 			float z = 0.0f;
 
 			GameObject newCube = (GameObject)Instantiate (myPrefab, new Vector3 (x, y, z), Quaternion.identity);
@@ -49,7 +51,7 @@ public class Sketch : MonoBehaviour {
 			newCube.GetComponent<CubeScript> ().SetSize (1.0f - perc);
 			newCube.GetComponent<CubeScript> ().rotateSpeed = perc;
 			newCube.GetComponentInChildren<TextMesh> ().text = product.ProductName;
-
+			/* mbah143 */
 
 			//----------------------
 		}
